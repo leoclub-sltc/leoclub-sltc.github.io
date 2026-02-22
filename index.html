@@ -743,7 +743,7 @@
             margin-right: 5px;
         }
 
-        /* ===== TEAM SECTION ===== */
+        /* ===== TEAM SECTION - FIXED IMAGE SIZING ===== */
         .team {
             background: var(--accent-cream);
             padding: 100px 0;
@@ -786,14 +786,20 @@
             margin: 0 auto;
         }
 
+        /* FIXED: Consistent image container for ALL team cards */
         .team-image {
-            height: 300px;
+            height: 320px;
+            width: 100%;
             overflow: hidden;
             position: relative;
             background: var(--primary-navy);
             border-radius: var(--border-radius) var(--border-radius) 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
+        /* FIXED: Ensure ALL images fill the container properly */
         .team-image img {
             width: 100%;
             height: 100%;
@@ -802,6 +808,7 @@
             transition: transform 0.6s ease;
         }
 
+        /* FIXED: Special handling for portrait/vertical images */
         .team-image img[src*=".jpeg"],
         .team-image img[src*=".jpg"],
         .team-image img[src*=".png"] {
@@ -809,8 +816,17 @@
             object-position: center 20%;
         }
 
+        /* FIXED: Specific fix for the Staff Advisor image (asanka.png) */
+        .team-image img[src*="asanka.png"] {
+            object-fit: cover;
+            object-position: center 30%;
+            transform: scale(1);
+            width: 100%;
+            height: 100%;
+        }
+
         .ipcp-card .team-image {
-            height: 350px;
+            height: 380px;
         }
 
         .ipcp-card .team-image img {
@@ -894,6 +910,7 @@
             border-top: 1px solid rgba(197,165,114,0.2);
         }
 
+        /* Team grid layouts */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -908,11 +925,34 @@
             box-shadow: var(--shadow-sm);
             transition: var(--transition);
             text-align: center;
+            width: 100%;
         }
 
         .team-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-lg);
+        }
+
+        /* Advisors Section Centered Styles */
+        .advisors-section .team-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .advisors-section .team-card {
+            width: 300px;
+            max-width: 100%;
+        }
+
+        /* Executive and Assistant sections remain as grid */
+        .executive-section .team-grid,
+        .assistant-section .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
         }
 
         /* ===== CONTACT SECTION ===== */
@@ -1245,11 +1285,21 @@
             }
 
             .team-image {
-                height: 320px;
+                height: 300px;
             }
             
             .ipcp-card .team-image {
-                height: 380px;
+                height: 360px;
+            }
+
+            .advisors-section .team-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .advisors-section .team-card {
+                width: 100%;
+                max-width: 350px;
             }
         }
 
@@ -1315,11 +1365,11 @@
             }
 
             .team-image {
-                height: 350px;
+                height: 320px;
             }
             
             .ipcp-card .team-image {
-                height: 400px;
+                height: 380px;
             }
 
             .contact-info,
@@ -1387,11 +1437,11 @@
             }
 
             .team-image {
-                height: 380px;
+                height: 340px;
             }
             
             .ipcp-card .team-image {
-                height: 420px;
+                height: 400px;
             }
         }
     </style>
@@ -1502,7 +1552,7 @@
                     </div>
                 </div>
                 <div class="about-image" data-aos="fade-left">
-                    <img src="images/about us.jpg" alt="Leo Club SLTC Members">
+                    <img src="images/about-us.jpg" alt="Leo Club SLTC Members">
                 </div>
             </div>
         </div>
@@ -1535,7 +1585,7 @@
                 </div>
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-image">
-                        <img src="images/green step.jpg" alt="Green Step Project">
+                        <img src="images/green-step.jpg" alt="Green Step Project">
                         <div class="project-overlay">
                             <span class="project-status">Ongoing</span>
                         </div>
@@ -1599,7 +1649,7 @@
                 </div>
                 <div class="project-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="project-image">
-                        <img src="images/sneha yathra.jpg" alt="Sneha Yathra Project">
+                        <img src="images/sneha-yathra.jpg" alt="Sneha Yathra Project">
                         <div class="project-overlay">
                             <span class="project-status">Completed</span>
                         </div>
@@ -1617,7 +1667,7 @@
         </div>
     </section>
 
-    <!-- Team Section -->
+    <!-- Team Section - UPDATED with Advisors and Senior Treasurer on same line -->
     <section id="team" class="team">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -1626,8 +1676,54 @@
                 <p class="section-description">Meet the dedicated leaders guiding our club</p>
             </div>
             
-            <!-- IPCP -->
-            <div class="ipcp-section" data-aos="fade-up">
+            <!-- Advisors Section (NOW FIRST and CENTERED with Senior Treasurer) -->
+            <div class="advisors-section" data-aos="fade-up" data-aos-delay="50">
+                <h3 class="team-subtitle">Our Advisors & Senior Treasurer</h3>
+                <div class="team-grid">
+                    <!-- Leo Advisor -->
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="images/jayavilal.jpg.jpeg" alt="Leo Advisor" loading="lazy">
+                            <div class="team-social"></div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Lion Jayavilal Meegoda</h3>
+                            <p class="position">Leo Advisor</p>
+                            <p>Lions Club Of Polgasowita</p>
+                            <p class="batch">2025/26</p>
+                        </div>
+                    </div>
+
+                    <!-- Staff Advisor -->
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="images/asanka.png" alt="Staff Advisor" loading="lazy">
+                            <div class="team-social"></div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Ms. Asanka Ranasinghe</h3>
+                            <p class="position">Staff Advisor</p>
+                            <p class="batch">2025/26</p>
+                        </div>
+                    </div>
+
+                    <!-- Senior Treasurer (NEW - added on same line) -->
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="images/tashil.jpg" alt="Senior Treasurer" loading="lazy">
+                            <div class="team-social"></div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Mr.Tashil Fernando</h3>
+                            <p class="position">Senior Treasurer</p>
+                            <p class="batch">2025/26</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- IPCP (Immediate Past Club President) -->
+            <div class="ipcp-section" data-aos="fade-up" data-aos-delay="100">
                 <h3 class="team-subtitle">Immediate Past Club President</h3>
                 <div class="ipcp-grid">
                     <div class="team-card ipcp-card">
@@ -1646,9 +1742,10 @@
             </div>
 
             <!-- Executive Committee -->
-            <div class="executive-section" data-aos="fade-up" data-aos-delay="100">
+            <div class="executive-section" data-aos="fade-up" data-aos-delay="150">
                 <h3 class="team-subtitle">Executive Committee</h3>
                 <div class="team-grid">
+                    <!-- President -->
                     <div class="team-card">
                         <div class="team-image">
                             <img src="images/achira.jpg" alt="Leo Achira Sadharanga - President" loading="lazy">
@@ -1661,6 +1758,7 @@
                         </div>
                     </div>
 
+                    <!-- Vice President -->
                     <div class="team-card">
                         <div class="team-image">
                             <img src="images/akila.jpg" alt="Leo Akila Shehari - Vice President" loading="lazy">
@@ -1673,6 +1771,7 @@
                         </div>
                     </div>
 
+                    <!-- Secretary -->
                     <div class="team-card">
                         <div class="team-image">
                             <img src="images/kaushalya.jpg" alt="Leo Kaushalya Herath - Secretary" loading="lazy">
@@ -1685,6 +1784,7 @@
                         </div>
                     </div>
 
+                    <!-- Treasurer -->
                     <div class="team-card">
                         <div class="team-image">
                             <img src="images/tharindu.jpg" alt="Leo Tharindu Thilanka - Treasurer" loading="lazy">
@@ -1697,6 +1797,7 @@
                         </div>
                     </div>
 
+                    <!-- Chief Editor -->
                     <div class="team-card">
                         <div class="team-image">
                             <img src="images/vidumini.jpg" alt="Leo Vidumini Sanjula - Chief Editor" loading="lazy">
@@ -1715,6 +1816,7 @@
             <div class="assistant-section" data-aos="fade-up" data-aos-delay="200">
                 <h3 class="team-subtitle">Assistant Executive Committee</h3>
                 <div class="team-grid">
+                    <!-- 2nd Vice President -->
                     <div class="team-card">
                         <div class="team-image">
                             <img src="images/dhanuja.jpg" alt="Leo Dhanuja Balasooriya - 2nd Vice President" loading="lazy">
@@ -1727,6 +1829,7 @@
                         </div>
                     </div>
 
+                    <!-- Assistant Secretary -->
                     <div class="team-card">
                         <div class="team-image">
                             <img src="images/chamoda.jpg" alt="Leo Chamoda Dulhari - Assistant Secretary" loading="lazy">
@@ -1739,6 +1842,7 @@
                         </div>
                     </div>
 
+                    <!-- 2nd Assistant Secretary -->
                     <div class="team-card">
                         <div class="team-image">
                             <img src="images/vihanga.jpg" alt="Leo Vihanga Sathsarani - 2nd Assistant Secretary" loading="lazy">
@@ -1751,6 +1855,7 @@
                         </div>
                     </div>
 
+                    <!-- Assistant Treasurer -->
                     <div class="team-card">
                         <div class="team-image">
                             <img src="images/omaya.jpg" alt="Leo Omaya Nayagara - Assistant Treasurer" loading="lazy">
@@ -1763,6 +1868,7 @@
                         </div>
                     </div>
 
+                    <!-- 2nd Assistant Treasurer -->
                     <div class="team-card">
                         <div class="team-image">
                             <img src="images/ayesh.jpg" alt="Leo Ayesh Umayanga - 2nd Assistant Treasurer" loading="lazy">
@@ -1775,6 +1881,7 @@
                         </div>
                     </div>
 
+                    <!-- Assistant Editor -->
                     <div class="team-card">
                         <div class="team-image">
                             <img src="images/prabath.jpg" alt="Leo Prabath Gallage - Assistant Editor" loading="lazy">
@@ -1787,6 +1894,7 @@
                         </div>
                     </div>
 
+                    <!-- 2nd Assistant Editor -->
                     <div class="team-card">
                         <div class="team-image">
                             <img src="images/vemashi.jpg" alt="Vemashi Sandanika - 2nd Assistant Editor" loading="lazy">
