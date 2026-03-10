@@ -6,7 +6,7 @@
     <title>Leo Club of SLTC | Sri Lanka Technology Campus</title>
     <!-- SEO Meta Tags -->
     <meta name="description" content="Leo Club of Sri Lanka Technology Campus - Empowering youth through leadership, service, and friendship since 2016. Join us in making a difference!">
-    <meta name="keywords" content="Leo Club, SLTC, Sri Lanka Technology Campus, Youth Leadership, Community Service, Volunteer, Padukka">
+    <meta name="keywords" content="Leo Club, SLTC, Sri Lanka Technology Campus, Youth Leadership, Community Service, Volunteer, Padukka, Leo Magazine">
     <meta name="author" content="Leo Club of SLTC">
     <!-- Open Graph Tags for Social Media -->
     <meta property="og:title" content="Leo Club of SLTC">
@@ -808,6 +808,162 @@
             max-width: 100%;
         }
 
+        /* ===== MAGAZINE SECTION ===== */
+        #magazine {
+            background: var(--accent-gray);
+            padding: 80px 0;
+        }
+
+        .magazine-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+
+        .magazine-cover {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .magazine-cover:hover {
+            transform: translateY(-10px);
+        }
+
+        .magazine-cover img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--primary-gold);
+        }
+
+        .magazine-cover::after {
+            content: '📖';
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-md);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .magazine-info {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            background: var(--text-light);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .magazine-info h3 {
+            font-size: 2rem;
+            color: var(--primary-navy);
+            margin-bottom: 20px;
+        }
+
+        .magazine-info p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .magazine-info strong {
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .magazine-badge {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .flipbook-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary-navy);
+            color: var(--text-light);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: 2px solid var(--primary-gold);
+        }
+
+        .flipbook-link:hover {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .flipbook-link i {
+            font-size: 1.3rem;
+        }
+
+        .magazine-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .magazine-feature {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .magazine-feature i {
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+        }
+
+        .magazine-feature h4 {
+            font-size: 1rem;
+            color: var(--primary-navy);
+            margin-bottom: 5px;
+        }
+
+        .magazine-feature p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
         /* ===== CONTACT SECTION ===== */
         #contact {
             background: var(--text-light);
@@ -1110,7 +1266,8 @@
             .projects-grid,
             .about-grid,
             .footer-content,
-            .join-benefits {
+            .join-benefits,
+            .magazine-features {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
@@ -1126,6 +1283,13 @@
             }
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            .magazine-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .magazine-cover {
+                max-width: 350px;
             }
         }
 
@@ -1230,6 +1394,14 @@
             .footer-col p {
                 justify-content: center;
             }
+
+            .magazine-info {
+                padding: 30px 20px;
+            }
+
+            .magazine-info h3 {
+                font-size: 1.8rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1260,6 +1432,15 @@
             .join-benefits {
                 grid-template-columns: 1fr;
             }
+
+            .magazine-cover {
+                min-width: 250px;
+            }
+
+            .flipbook-link {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -1279,6 +1460,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#team">Team</a></li>
+                <li><a href="#magazine">Magazine</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#join" class="nav-cta">Join Us</a></li>
             </ul>
@@ -1739,6 +1921,186 @@
         </div>
     </section>
 
+    <!-- Magazine Section -->
+    <section id="magazine">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-subtitle">Our Publication</div>
+                <h2 class="section-title">Leo Magazine</h2>
+                <p class="section-description">Explore our club's official magazine featuring stories, projects, and achievements</p>
+            </div>
+            
+            <!-- July Edition -->
+            <div class="magazine-content">
+                <div class="magazine-cover" data-aos="fade-right">
+                    <img src="images/july cover page.png" alt="Leo Magazine July Edition">
+                </div>
+                <div class="magazine-info" data-aos="fade-left">
+                    <span class="magazine-badge">July Edition 2025</span>
+                    <h3>Leo Magazine</h3>
+                    <p><strong>✨🎉 THE LEO TIMES – JULY EDITION OUT NOW! 🎉✨</strong><br><br>
+We're proud to unveil the Freedom & Hope Edition of LEO TIMES – Volume 07, Issue 01, the official magazine of the Leo Club of Sri Lanka Technology Campus.🦁📖</p>
+                    <a href="https://anyflip.com/pkyeo/xiuh/" class="flipbook-link" target="_blank">
+                        <i class="fas fa-book-open"></i> Read Flipbook Online <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="magazine-features">
+                        <div class="magazine-feature"><i class="fas fa-camera"></i><h4>Photo Stories</h4><p>Project highlights</p></div>
+                        <div class="magazine-feature"><i class="fas fa-users"></i><h4>Member Spotlights</h4><p>Meet our Leos</p></div>
+                        <div class="magazine-feature"><i class="fas fa-trophy"></i><h4>Achievements</h4><p>Club milestones</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- August Edition -->
+            <div class="magazine-content">
+                <div class="magazine-cover" data-aos="fade-right">
+                    <img src="images/august cover page.png" alt="Leo Magazine August Edition">
+                </div>
+                <div class="magazine-info" data-aos="fade-left">
+                    <span class="magazine-badge">August Edition 2025</span>
+                    <h3>Leo Magazine</h3>
+                    <p><strong>✨🎉 THE LEO TIMES – AUGUST EDITION OUT NOW! 🎉✨</strong><br><br>
+We're proud to unveil the Freedom & Hope Edition of LEO TIMES – Volume 07, Issue 02, the official magazine of the Leo Club of Sri Lanka Technology Campus.🦁📖</p>
+                    <a href="https://anyflip.com/pkyeo/dbap/" class="flipbook-link" target="_blank">
+                        <i class="fas fa-book-open"></i> Read Flipbook Online <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="magazine-features">
+                        <div class="magazine-feature"><i class="fas fa-camera"></i><h4>Photo Stories</h4><p>Project highlights</p></div>
+                        <div class="magazine-feature"><i class="fas fa-users"></i><h4>Member Spotlights</h4><p>Meet our Leos</p></div>
+                        <div class="magazine-feature"><i class="fas fa-trophy"></i><h4>Achievements</h4><p>Club milestones</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- September Edition -->
+            <div class="magazine-content">
+                <div class="magazine-cover" data-aos="fade-right">
+                    <img src="images/september cover page.png" alt="Leo Magazine September Edition">
+                </div>
+                <div class="magazine-info" data-aos="fade-left">
+                    <span class="magazine-badge">September Edition 2025</span>
+                    <h3>Leo Magazine</h3>
+                    <p><strong>✨🎉 THE LEO TIMES – SEPTEMBER EDITION OUT NOW! 🎉✨</strong><br><br>
+We're proud to unveil the Freedom & Hope Edition of LEO TIMES – Volume 07, Issue 03, the official magazine of the Leo Club of Sri Lanka Technology Campus.🦁📖</p>
+                    <a href="https://anyflip.com/pkyeo/phxt/" class="flipbook-link" target="_blank">
+                        <i class="fas fa-book-open"></i> Read Flipbook Online <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="magazine-features">
+                        <div class="magazine-feature"><i class="fas fa-camera"></i><h4>Photo Stories</h4><p>Project highlights</p></div>
+                        <div class="magazine-feature"><i class="fas fa-users"></i><h4>Member Spotlights</h4><p>Meet our Leos</p></div>
+                        <div class="magazine-feature"><i class="fas fa-trophy"></i><h4>Achievements</h4><p>Club milestones</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- October Edition -->
+            <div class="magazine-content">
+                <div class="magazine-cover" data-aos="fade-right">
+                    <img src="images/october cover page.png" alt="Leo Magazine October Edition">
+                </div>
+                <div class="magazine-info" data-aos="fade-left">
+                    <span class="magazine-badge">October Edition 2025</span>
+                    <h3>Leo Magazine</h3>
+                    <p><strong>✨🎉 THE LEO TIMES – OCTOBER EDITION OUT NOW! 🎉✨</strong><br><br>
+We're proud to unveil the Freedom & Hope Edition of LEO TIMES – Volume 07, Issue 04, the official magazine of the Leo Club of Sri Lanka Technology Campus.🦁📖</p>
+                    <a href="https://anyflip.com/pkyeo/hkpv/" class="flipbook-link" target="_blank">
+                        <i class="fas fa-book-open"></i> Read Flipbook Online <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="magazine-features">
+                        <div class="magazine-feature"><i class="fas fa-camera"></i><h4>Photo Stories</h4><p>Project highlights</p></div>
+                        <div class="magazine-feature"><i class="fas fa-users"></i><h4>Member Spotlights</h4><p>Meet our Leos</p></div>
+                        <div class="magazine-feature"><i class="fas fa-trophy"></i><h4>Achievements</h4><p>Club milestones</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- November Edition -->
+            <div class="magazine-content">
+                <div class="magazine-cover" data-aos="fade-right">
+                    <img src="images/november cover page.png" alt="Leo Magazine November Edition">
+                </div>
+                <div class="magazine-info" data-aos="fade-left">
+                    <span class="magazine-badge">November Edition 2025</span>
+                    <h3>Leo Magazine</h3>
+                    <p><strong>✨🎉 THE LEO TIMES – NOVEMBER EDITION OUT NOW! 🎉✨</strong><br><br>
+We're proud to unveil the Freedom & Hope Edition of LEO TIMES – Volume 07, Issue 05, the official magazine of the Leo Club of Sri Lanka Technology Campus.🦁📖</p>
+                    <a href="https://anyflip.com/pkyeo/dwfb/" class="flipbook-link" target="_blank">
+                        <i class="fas fa-book-open"></i> Read Flipbook Online <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="magazine-features">
+                        <div class="magazine-feature"><i class="fas fa-camera"></i><h4>Photo Stories</h4><p>Project highlights</p></div>
+                        <div class="magazine-feature"><i class="fas fa-users"></i><h4>Member Spotlights</h4><p>Meet our Leos</p></div>
+                        <div class="magazine-feature"><i class="fas fa-trophy"></i><h4>Achievements</h4><p>Club milestones</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- December Edition -->
+            <div class="magazine-content">
+                <div class="magazine-cover" data-aos="fade-right">
+                    <img src="images/december cover page.png" alt="Leo Magazine December Edition">
+                </div>
+                <div class="magazine-info" data-aos="fade-left">
+                    <span class="magazine-badge">December Edition 2025</span>
+                    <h3>Leo Magazine</h3>
+                    <p><strong>✨🎉 THE LEO TIMES – DECEMBER EDITION OUT NOW! 🎉✨</strong><br><br>
+We're proud to unveil the Freedom & Hope Edition of LEO TIMES – Volume 07, Issue 06, the official magazine of the Leo Club of Sri Lanka Technology Campus.🦁📖</p>
+                    <a href="https://anyflip.com/pkyeo/vbiw/" class="flipbook-link" target="_blank">
+                        <i class="fas fa-book-open"></i> Read Flipbook Online <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="magazine-features">
+                        <div class="magazine-feature"><i class="fas fa-camera"></i><h4>Photo Stories</h4><p>Project highlights</p></div>
+                        <div class="magazine-feature"><i class="fas fa-users"></i><h4>Member Spotlights</h4><p>Meet our Leos</p></div>
+                        <div class="magazine-feature"><i class="fas fa-trophy"></i><h4>Achievements</h4><p>Club milestones</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- January Edition -->
+            <div class="magazine-content">
+                <div class="magazine-cover" data-aos="fade-right">
+                    <img src="images/january cover page.png" alt="Leo Magazine January Edition">
+                </div>
+                <div class="magazine-info" data-aos="fade-left">
+                    <span class="magazine-badge">January Edition 2026</span>
+                    <h3>Leo Magazine</h3>
+                    <p><strong>✨🎉 THE LEO TIMES – JANUARY EDITION OUT NOW! 🎉✨</strong><br><br>
+We're proud to unveil the Freedom & Hope Edition of LEO TIMES – Volume 07, Issue 07, the official magazine of the Leo Club of Sri Lanka Technology Campus.🦁📖</p>
+                    <a href="https://anyflip.com/pkyeo/cnvh/" class="flipbook-link" target="_blank">
+                        <i class="fas fa-book-open"></i> Read Flipbook Online <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="magazine-features">
+                        <div class="magazine-feature"><i class="fas fa-camera"></i><h4>Photo Stories</h4><p>Project highlights</p></div>
+                        <div class="magazine-feature"><i class="fas fa-users"></i><h4>Member Spotlights</h4><p>Meet our Leos</p></div>
+                        <div class="magazine-feature"><i class="fas fa-trophy"></i><h4>Achievements</h4><p>Club milestones</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- February Edition -->
+            <div class="magazine-content">
+                <div class="magazine-cover" data-aos="fade-right">
+                    <img src="images/february cover page.png" alt="Leo Magazine February Edition">
+                </div>
+                <div class="magazine-info" data-aos="fade-left">
+                    <span class="magazine-badge">February Edition 2026</span>
+                    <h3>Leo Magazine</h3>
+                    <p><strong>✨🎉 THE LEO TIMES – FEBRUARY EDITION OUT NOW! 🎉✨</strong><br><br>
+We're proud to unveil the Freedom & Hope Edition of LEO TIMES – Volume 07, Issue 08, the official magazine of the Leo Club of Sri Lanka Technology Campus.🦁📖<br><br>
+Celebrating Sri Lanka's Independence 🇱🇰 while standing strong with cancer warriors and survivors 🎗️. A month of pride, resilience, and compassion — the true Leo spirit. 🕊️🌟</p>
+                    <a href="https://anyflip.com/pkyeo/zvrr/" class="flipbook-link" target="_blank">
+                        <i class="fas fa-book-open"></i> Read Flipbook Online <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="magazine-features">
+                        <div class="magazine-feature"><i class="fas fa-camera"></i><h4>Photo Stories</h4><p>Project highlights</p></div>
+                        <div class="magazine-feature"><i class="fas fa-users"></i><h4>Member Spotlights</h4><p>Meet our Leos</p></div>
+                        <div class="magazine-feature"><i class="fas fa-trophy"></i><h4>Achievements</h4><p>Club milestones</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -1880,6 +2242,7 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#team">Team</a></li>
+                        <li><a href="#magazine">Magazine</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="#join">Join Us</a></li>
                     </ul>
